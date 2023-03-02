@@ -1,7 +1,7 @@
 name: '52Pojie Auto Sign'
 
 on:
-    workflow_dispatch:
+  workflow_dispatch:
   push:
     branches:
       - master
