@@ -10,10 +10,10 @@ new Env('吾爱破解签到');
 """
 import os
 import sys
+import notify
 import urllib.parse
 import requests
 from bs4 import BeautifulSoup
-from sendNotify import send
 
 # 多cookie使用&分割
 cookies = ""
@@ -75,4 +75,4 @@ for cookie in cookies.split("&"):
         print(f"第{n}个账号签到失败")
         message = f"第{n}个账号签到失败"
     n += 1
-    send("吾爱签到", message)
+    notify.send("吾爱签到", message)
