@@ -1,0 +1,23 @@
+name: 'Update_time'
+
+on:
+  schedule:
+    - cron: '0 0 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  Update_time:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - name: Checkin
+      run: |
+        echo `date +"%Y-%m-%d %H:%M:%S"` Checkin > time.log
+        git config --global user.email 349589369@qq.com
+        git config --global user.name Jejz168
+        git add .
+        git commit -m "Update time.log" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
