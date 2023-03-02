@@ -1,4 +1,9 @@
-name: 'Update_time'
+#===============================================
+# By：Jejz
+#===============================================
+
+
+name: Update_time
 
 on:
   schedule:
@@ -12,7 +17,7 @@ jobs:
     - uses: actions/checkout@main
     - name: Checkin
       run: |
-        echo `TZ=UTC-8 date +"%Y-%m-%d %H:%M:%S"` 喵喵喵.....我来啦😁😁😁 > time.log
+        echo `TZ=UTC-8 date +"%Y-%m-%d %H:%M:%S"` 喵喵喵......我来啦😁😁😁 > time.log
         git config --global user.email 349589369@qq.com
         git config --global user.name Jejz168
         git add .
