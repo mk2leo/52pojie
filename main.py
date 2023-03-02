@@ -25,7 +25,6 @@ if cookies == "":
         sys.exit()
 n = 1
 for cookie in cookies.split("&"):
-    global result
     url1 = "https://www.52pojie.cn/CSPDREL2hvbWUucGhwP21vZD10YXNrJmRvPWRyYXcmaWQ9Mg==?wzwscspd=MC4wLjAuMA=="
     url2 = 'https://www.52pojie.cn/home.php?mod=task&do=apply&id=2&referer=%2F'
     url3 = 'https://www.52pojie.cn/home.php?mod=task&do=draw&id=2'
