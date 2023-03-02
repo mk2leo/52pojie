@@ -3,7 +3,7 @@
 cron: 53 11 * * *
 new Env('吾爱破解');
 """
-
+import os
 import requests
 from bs4 import BeautifulSoup
 
