@@ -18,10 +18,10 @@ from bs4 import BeautifulSoup
 # 多cookie使用&分割
 cookies = ""
 if cookies == "":
-    if os.environ.get("PJ52_COOKIE"):
-        cookies = os.environ.get("PJ52_COOKIE")
+    if os.environ.get("POJIE"):
+        cookies = os.environ.get("POJIE")
     else:
-        print("请在环境变量填写PJ52_COOKIE的值")
+        print("请在环境变量填写POJIE的值")
         sys.exit()
 n = 1
 for cookie in cookies.split("&"):
