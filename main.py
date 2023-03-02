@@ -20,7 +20,7 @@ PUSHAPI = os.environ.get("PUSH_PLUS_TOKEN")
 def pushtg(data):
     global PUSHAPI
     requests.post(
-        'http://www.pushplus.plus/send?token='+PUSHAPI+'&title=吾爱签到'+'&content='+data)
+        'http://www.pushplus.plus/send?token='+PUSHAPI+'&title='+'&content='+data)
     
 if cookies == "":
     if os.environ.get("POJIE"):
