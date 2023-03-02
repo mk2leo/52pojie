@@ -38,8 +38,7 @@ def sign(cookie):
 def main():
     b = os.environ['POJIE']
     cookie = b
-    sign_msg = sign(cookie=cookie)
-    print(sign_msg)
+
 
 
 if __name__ == "__main__":
