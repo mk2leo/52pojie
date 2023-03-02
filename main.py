@@ -74,4 +74,4 @@ for cookie in cookies.split("&"):
     else:
         print(f"第{n}个账号签到失败")
         result += f"第{n}个账号签到失败"
-    return result
+
