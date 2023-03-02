@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 
 # 多cookie使用&分割
 cookies = ""
+message = ""
 import requests
 token = os.environ.get("PUSH_PLUS_TOKEN") 
 title= '吾爱签到' 
