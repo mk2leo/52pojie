@@ -10,7 +10,6 @@ new Env('吾爱破解签到');
 """
 import os
 import sys
-import notify
 import urllib.parse
 import requests
 from bs4 import BeautifulSoup
