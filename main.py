@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 cookies = ""
 PUSHAPI = os.environ.get("PUSH_PLUS_TOKEN")
 def pushtg(data):
-    global PUSH_PLUS_TOKEN
+    global PUSHAPI
     requests.post(
         'http://www.pushplus.plus/send?token='+PUSHAPI+'&title=吾爱签到'+'&content='+data)
     
