@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@main
     - name: Checkin
       run: |
-        echo `date +"%Y-%m-%d %H:%M:%S"` Checkin > time.log
+        echo `date +"%Y-%m-%d %H:%M:%S"` 喵喵喵.....我来啦😁😁😁 > time.log
         git config --global user.email 349589369@qq.com
         git config --global user.name Jejz168
         git add .
