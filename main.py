@@ -66,11 +66,8 @@ for cookie in cookies.split("&"):
         result += f"第{n}个账号Cookie 失效"
     elif "恭喜" in jx_data:
         print(f"第{n}个账号签到成功")
-        result += f"第{n}个账号签到成功"
     elif "不是进行中的任务" in jx_data:
         print(f"第{n}个账号今日已签到")
-        result +=f"第{n}个账号今日已签到"
     else:
         print(f"第{n}个账号签到失败")
-        result += f"第{n}个账号签到失败"
 
