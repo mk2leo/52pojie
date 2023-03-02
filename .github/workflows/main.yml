@@ -2,9 +2,6 @@ name: '52Pojie Auto Sign'
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
   schedule:
     - cron: '0 18,10 * * *'
 
@@ -13,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: '代码检查'
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
       - name: '初始化Python'
         uses: actions/setup-python@master
         with:
