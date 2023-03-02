@@ -8,7 +8,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from notify import send
-from utils import get_data
+
 
 
 class Pojie:
@@ -54,7 +54,6 @@ class Pojie:
 
 
 if __name__ == "__main__":
-    _data = get_data()
-    _check_items = _data.get("POJIE", [])
+    _check_items = os.environ.get("POJIE")
     result = Pojie(check_items=_check_items).main()
     send("吾爱破解", result)
