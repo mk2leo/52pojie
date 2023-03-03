@@ -17,13 +17,18 @@ from bs4 import BeautifulSoup
 
 # 多cookie使用&分割
 cookies = ""
-PUSH = os.environ.get("PUSH_PLUS_TOKEN")
+PUSHAPI = ""
 if cookies == "":
     if os.environ.get("POJIE"):
         cookies = os.environ.get("POJIE")
     else:
         print("请在环境变量填写POJIE的值")
         sys.exit()
+if PUSHAPI == "":
+    if os.environ.get("PUSH_PLUS_TOKEN"):
+        PUSHAPI = os.environ.get("PUSH_PLUS_TOKEN")
+    else:
+        print("请在环境变量填写PUSH_PLUS_TOKEN的值")
 n = 1
 for cookie in cookies.split("&"):
     url1 = "https://www.52pojie.cn/CSPDREL2hvbWUucGhwP21vZD10YXNrJmRvPWRyYXcmaWQ9Mg==?wzwscspd=MC4wLjAuMA=="
@@ -78,14 +83,14 @@ for cookie in cookies.split("&"):
  
 
 def send_wechat(msg):
-    token = PUSH
+    token = PUSHAPI
     title = '吾爱签到'
     content = msg
     template = 'html'
     url = f"https://www.pushplus.plus/send?token={token}&title={title}&content={content}&template={template}"
     print(url)
     r = requests.get(url=url)
-
+    print(r.text)
 if __name__ == "__main__":
     send_wechat(msg)
     n += 1
