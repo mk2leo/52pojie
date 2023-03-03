@@ -25,10 +25,10 @@ if cookies == "":
         print("请在环境变量填写POJIE的值")
         sys.exit()
 if PUSHAPI == "":
-    if os.environ("PUSH_PLUS_TOKEN"):
-        PUSHAPI = os.environ("PUSH_PLUS_TOKEN")
+    if  os.environ.get["PUSH"]:
+        PUSHAPI = os.environ.get("PUSH")
     else:
-        print("请在环境变量填写PUSH_PLUS_TOKEN的值")
+        print("请在环境变量填写PUSH的值")
 n = 1
 for cookie in cookies.split("&"):
     url1 = "https://www.52pojie.cn/CSPDREL2hvbWUucGhwP21vZD10YXNrJmRvPWRyYXcmaWQ9Mg==?wzwscspd=MC4wLjAuMA=="
@@ -80,18 +80,8 @@ for cookie in cookies.split("&"):
     else:
         print(f"第{n}个账号签到失败")
         msg = f"第{n}个账号签到失败"
- 
+        requests.get('http://www.pushplus.plus/send?token=' + PUSHAPI + '&title='+msg+'&content='+msg)
 
-def send_wechat(msg):
-    token = PUSHAPI
-    title = '吾爱签到'
-    content = msg
-    template = 'html'
-    url = f"https://www.pushplus.plus/send?token={token}&title={title}&content={content}&template={template}"
-    print(url)
-    r = requests.get(url=url)
-    print(r.text)
 if __name__ == "__main__":
-    send_wechat(msg)
     n += 1
     notify.send("吾爱签到", msg)
