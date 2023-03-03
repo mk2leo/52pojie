@@ -64,17 +64,28 @@ for cookie in cookies.split("&"):
     jx_data = r_data.find("div", id="messagetext").find("p").text
     if "您需要先登录才能继续本操作" in jx_data:
         print(f"第{n}个账号Cookie 失效")
-        message = f"第{n}个账号Cookie 失效"
+        msg = f"第{n}个账号Cookie 失效"
     elif "恭喜" in jx_data:
         print(f"第{n}个账号签到成功")
-        message = f"第{n}个账号签到成功"
+        msg = f"第{n}个账号签到成功"
     elif "不是进行中的任务" in jx_data:
         print(f"第{n}个账号今日已签到")
-        message = f"第{n}个账号今日已签到"
+        msg = f"第{n}个账号今日已签到"
     else:
         print(f"第{n}个账号签到失败")
-        message = f"第{n}个账号签到失败"
-        
+        msg = f"第{n}个账号签到失败"
+ 
+
+def send_wechat(msg):
+    token = os.environ.get("PUSH_PLUS_TOKEN")
+    title = '吾爱签到'
+    content = message
+    template = 'html'
+    url = f"https://www.pushplus.plus/send?token={token}&title={title}&content={content}&template={template}"
+    print(url)
+    r = requests.get(url=url)
+
 if __name__ == "__main__":
+    send_wechat(msg)
     n += 1
-    notify.send("吾爱签到", message)
+    notify.send("吾爱签到", msg)
