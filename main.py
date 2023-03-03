@@ -25,7 +25,7 @@ if cookies == "":
         print("请在环境变量填写POJIE的值")
         sys.exit()
 if PUSHAPI == "":
-    if  os.environ.get["PUSH"]:
+    if  os.environ.get("PUSH"):
         PUSHAPI = os.environ.get("PUSH")
     else:
         print("请在环境变量填写PUSH的值")
