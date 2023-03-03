@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 
 # 多cookie使用&分割
 cookies = ""
+PUSH = os.environ.get("PUSH_PLUS_TOKEN")
 if cookies == "":
     if os.environ.get("POJIE"):
         cookies = os.environ.get("POJIE")
@@ -77,7 +78,7 @@ for cookie in cookies.split("&"):
  
 
 def send_wechat(msg):
-    token = os.environ.get("PUSH_PLUS_TOKEN")
+    token = PUSH
     title = '吾爱签到'
     content = msg
     template = 'html'
