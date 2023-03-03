@@ -17,18 +17,13 @@ from bs4 import BeautifulSoup
 
 # 多cookie使用&分割
 cookies = ""
-PUSHAPI = ""
+PUSHAPI = os.environ["PUSH"]
 if cookies == "":
     if os.environ.get("POJIE"):
         cookies = os.environ.get("POJIE")
     else:
         print("请在环境变量填写POJIE的值")
         sys.exit()
-if PUSHAPI == "":
-    if  os.environ.get("PUSH"):
-        PUSHAPI = os.environ.get("PUSH")
-    else:
-        print("请在环境变量填写PUSH的值")
 n = 1
 for cookie in cookies.split("&"):
     url1 = "https://www.52pojie.cn/CSPDREL2hvbWUucGhwP21vZD10YXNrJmRvPWRyYXcmaWQ9Mg==?wzwscspd=MC4wLjAuMA=="
