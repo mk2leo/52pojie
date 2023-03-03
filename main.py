@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 
 # 多cookie使用&分割
 cookies = ""
-PUSHAPI = os.environ["PUSH"]
+pushapi = os.environ.get("PUSH")
 if cookies == "":
     if os.environ.get("POJIE"):
         cookies = os.environ.get("POJIE")
@@ -75,7 +75,7 @@ for cookie in cookies.split("&"):
     else:
         print(f"第{n}个账号签到失败")
         msg = f"第{n}个账号签到失败"
-        requests.get('http://www.pushplus.plus/send?token=' + PUSHAPI + '&title='+msg+'&content='+msg)
+        requests.get('http://www.pushplus.plus/send?token=' + pushapi + '&title='+msg+'&content='+msg)
 
 if __name__ == "__main__":
     n += 1
