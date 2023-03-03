@@ -12,9 +12,9 @@ jobs:
       - name: '代码检查'
         uses: actions/checkout@main
       - name: '初始化Python'
-        uses: actions/setup-python@master
+        uses: actions/setup-python@main
         with:
-          python-version: '3.7'
+          python-version: '3.9'
       - name: '安装依赖包'
         run: |
           python -m pip install --upgrade requests
