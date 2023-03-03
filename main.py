@@ -79,7 +79,7 @@ for cookie in cookies.split("&"):
 def send_wechat(msg):
     token = os.environ.get("PUSH_PLUS_TOKEN")
     title = '吾爱签到'
-    content = message
+    content = msg
     template = 'html'
     url = f"https://www.pushplus.plus/send?token={token}&title={title}&content={content}&template={template}"
     print(url)
