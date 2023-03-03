@@ -74,5 +74,7 @@ for cookie in cookies.split("&"):
     else:
         print(f"第{n}个账号签到失败")
         message = f"第{n}个账号签到失败"
+        
+if __name__ == "__main__":
     n += 1
     notify.send("吾爱签到", message)
